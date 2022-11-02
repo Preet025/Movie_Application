@@ -1,0 +1,61 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="side">
+        <mat-toolbar style="display:list-item ;display: flex;">
+            <a *ngIf="!isLogIn" mat-menu-item routerLink="/auth/login">
+                <mat-icon>login</mat-icon>Login
+            </a>
+            <img class="avatar" *ngIf="isLogIn && genderMale" src="./assets/avatar.png">
+            <img class="avatar" *ngIf="isLogIn && genderFemale" src="./assets/femaleAvatar.jpg">
+            <h4>{{userName}}</h4><br>
+        </mat-toolbar>
+        <mat-nav-list>
+            <a class="onSelect" mat-list-item routerLink="/dashboard/home" [routerLinkActive]="['is-active']">
+                <mat-icon>home</mat-icon>&nbsp;&nbsp;Home
+            </a>
+            <a class="onSelect" mat-list-item routerLink="favourite" [routerLinkActive]="['is-active']">
+                <mat-icon>favorite</mat-icon> &nbsp;&nbsp;Favourite Movies
+            </a>
+
+            <button class="onSelect" mat-button [matMenuTriggerFor]="menu">
+                <mat-icon>settings</mat-icon>&nbsp;&nbsp; Settings
+            </button>
+            <mat-menu #menu="matMenu">
+
+                <a *ngIf="isLogIn" mat-menu-item (click)="loggedOut()">
+                    <mat-icon>logout</mat-icon>Log Out
+                </a>
+                <a mat-menu-item href="#" disabled="default">
+                    <mat-icon>help</mat-icon>Help
+                </a>
+                <a mat-menu-item href="#" disabled="default">
+                    <mat-icon>notifications_off</mat-icon>Disable Alerts
+                </a>
+                <a mat-menu-item href="#" disabled="default">
+                    <mat-icon>feedback</mat-icon>send_feedback
+                </a>
+            </mat-menu>
+
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content style="justify-content: space-evenly;">
+        <mat-toolbar color="dark">
+            <button (click)="sidenav.toggle()" mat-icon-button>
+                <mat-icon aria-hidden="false" aria-label="Example home icon">menu</mat-icon>
+                &nbsp;MOVIZ-APP
+            </button> &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+            <mat-chip-list aria-label="Fish selection">
+                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                <mat-chip routerLink="tvshows">TV-SHOWS</mat-chip>
+                &nbsp;&nbsp; &nbsp;
+                <mat-chip routerLink="upcoming">UPCOMING</mat-chip>
+                &nbsp;&nbsp; &nbsp;
+                <mat-chip routerLink="popular">TOP-RATED</mat-chip>
+            </mat-chip-list>
+            <span class="rem"></span>
+            <input class="ser" matInput type=" text" name="name" id="name" [value]="name" (keyup)="keyUp($event)">
+            <button mat-icon-button class="example-icon" routerLink="moviesearch">
+                <mat-icon aria-hidden="false" aria-label="Example home icon">search</mat-icon></button>
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

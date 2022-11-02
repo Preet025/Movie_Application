@@ -1,0 +1,55 @@
+.movie-img {
+  width: 400px;
+  height: 600px;
+  
+}
+
+#bgimg {
+  
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  
+  
+}
+
+/* #movie-img:hover {
+  transform: translate(25%);
+} */
+#infoCard {
+  opacity: 1;
+  display: flex;
+  
+  
+}
+
+.cardContent {
+  
+  background: linear-gradient(rgb(61, 61, 61), rgb(250, 142, 142)); 
+  color: white;
+  
+  font-size: 40%;
+  transform: translate(25%);
+
+  
+}
+mat-card-subtitle{
+ 
+  font-weight: bolder;
+  font-size: large;
+
+}
+
+
+
+/* .cardContent:hover{
+  transform: translate(25%);
+}
+
+.example-cardmovie-img {
+  transform: translate(25%);
+} */
+
+/* .item:hover ~ .item {
+  transform: translateX(25%);
+} */

@@ -1,0 +1,118 @@
+                        .sidenav-container {
+                            height: 100%;
+                        }
+                        
+                        .sidenav {
+                            width: 200px;
+                            background-color: rgb(60, 100, 101);
+                        }
+                        
+                        .sidenav .mat-toolbar {
+                            background: inherit;
+                        }
+                        
+                        .space {
+                            height: 40px;
+                        }
+                        
+                        .mat-toolbar.mat-primary {
+                            position: sticky;
+                            top: 0;
+                            z-index: 1;
+                        }
+                        
+                        .mat-toolbar.mat-primary {
+                            background: #17525a;
+                            color: #fff;
+                        }
+                        
+                        .avatar {
+                            vertical-align: middle;
+                            width: 60px;
+                            height: 60px;
+                            border-radius: 50%;
+                            margin: 10px;
+                        }
+                        /* #onSelect{
+    background-color: red;
+} */
+                        
+                        .onSelect:focus {
+                            background-color: white;
+                            color: black;
+                        }
+                        
+                        .is-active {
+                            background-color: white;
+                            color: black;
+                        }
+                        
+                        .satyam {
+                            margin-top: -1.8rem;
+                            margin-bottom: 0.2rem;
+                            margin-left: 15rem;
+                            width: 80%;
+                            max-width: 8500px;
+                            background: rgba(46, 153, 199, 0.2);
+                            background-color: #03303e;
+                            display: flex;
+                            align-items: center;
+                            border-radius: 30px;
+                            padding: 7px 20px;
+                        }
+                        
+                        .rem {
+                            flex: 1 1 auto;
+                        }
+                        
+                        .d-flex input {
+                            background: transparent;
+                            flex: 1;
+                            border: 0;
+                            outline: none;
+                            /* padding: 24px 20px; */
+                            font-size: 20px;
+                            color: #0c2b47;
+                        }
+                        
+                        .d-flex button {
+                            width: 70px;
+                            border: 0;
+                            border-radius: 15%;
+                            cursor: pointer;
+                            margin-right: 0%;
+                        }
+                        
+                        .sbutton {
+                            margin-left: 1rem;
+                            /* margin-right: 1rem; */
+                            color: #fff;
+                        }
+                        
+                        .sbutton-hover {
+                            color: #fff;
+                        }
+                        
+                        .stext {
+                            width: 700px;
+                        }
+                        
+                        .search-bar-wrapper {
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                        }
+                        
+                        .search-btn-box {
+                            left: 78%;
+                            top: 0;
+                            height: 45px;
+                            max-height: 45px;
+                            font-family: "Raleway Medium", sans-serif !important;
+                            font-size: 1.2em;
+                        }
+                        
+                        .ser {
+                            background-color: rgb(173, 163, 163);
+                            border-radius: 30px;
+                        }

@@ -1,0 +1,107 @@
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                        <form [formGroup]="RegistrationForm" (ngSubmit)="OnRegister()">
+                            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5"><b>Sign Up</b></h3>
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <label class="form-label" for="Name">Name</label>
+                                        <input type="text" formControlName="userName"
+                                            class="form-control form-control-lg" />
+                                    </div>
+                                    <span class="text-danger" *ngIf="getUserName.invalid && getUserName.touched ">Name
+                                        Is Required </span>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <label class="form-label" for="Email">Email</label>
+                                        <input type="text" class="form-control form-control-lg"
+                                            formControlName="email" />
+                                    </div>
+                                    <span class="text-danger" *ngIf="getEmail.invalid && getEmail.touched ">Valid Email
+                                        Is Required, </span>
+                                    <span class="text-danger" *ngIf="getEmail.invalid && getEmail.dirty ">This Email Is
+                                        Invalid</span>
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-md-6 mb-4 ">
+                                    <div class="form-outline ">
+                                        <label class="form-label " for="Password">Password</label>
+                                        <input type="password" formControlName="password"
+                                            class="form-control form-control-lg " />
+                                    </div>
+                                    <span class="text-danger"
+                                        *ngIf="(getPassword.errors?.['minlength'] && getPassword.errors?.['maxlength']) || (getPassword.invalid && getPassword.touched) ">Minimum
+                                        4 & Maximum 12 Character's </span>
+                                    <span class="text-danger"
+                                        *ngIf="getPassword.invalid && getPassword.touched ">Password Is Required </span>
+                                </div>
+                                <div class="col-md-6 mb-4 ">
+                                    <div class="form-outline ">
+                                        <label class="form-label " for="confirm Password">Confirm Password</label>
+                                        <input type="password" formControlName="confirmPassword"
+                                            class="form-control form-control-lg " />
+                                    </div>
+                                    <span class="text-danger"
+                                        *ngIf="getConfirmPassword.invalid && getConfirmPassword.touched ">Confirm
+                                        Password Is Required </span>
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-md-6 mb-4 ">
+                                    <div class="form-outline ">
+                                        <label class="form-label " for="mobile">Mobile Number</label>
+                                        <input type="text " formControlName="phoneNumber"
+                                            class="form-control form-control-lg " />
+                                    </div>
+                                    <span class="text-danger"
+                                        *ngIf="(getPhoneNumber.errors?.['pattern']) || (getPhoneNumber.invalid && getPhoneNumber.dirty) ">Only
+                                        10 Digits</span>
+                                    <span class="text-danger "
+                                        *ngIf="getPhoneNumber.invalid && getPhoneNumber.touched ">Mobile Number Is
+                                        Required </span>
+                                </div>
+
+                                <div class="col-md-6 mb-4 ">
+                                    <label>Select gender</label><br>
+                                    <select style="margin: 10px; width:250px;height: 45px;" formControlName="gender">
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
+                                    <span class="text-danger "
+                                        *ngIf="getGender.invalid && getGender.touched ">Gender Is
+                                        Required </span>
+                                </div>
+
+                            </div>
+                            <div class="row ">
+                                <div class="col-md-6 mb-4 ">
+                                    <div class="form-outline ">
+                                        <label for="file" class="name">Profile Picture</label>
+                                        <input formControlName="profilePicture" type="file"
+                                            class="form-control form-control-lg " (change)="upload($event) ">
+                                    </div>
+                                    <span class="text-danger "
+                                        *ngIf="getProfilePicture.invalid && getProfilePicture.touched ">Profile Picture
+                                        Is Required </span>
+                                </div>
+
+                            </div>
+
+                            <div class="mt-4 pt-2">
+                                <button class="btn btn-primary btn-lg " type="submit "
+                                    [disabled]="!RegistrationForm.valid ">Register</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

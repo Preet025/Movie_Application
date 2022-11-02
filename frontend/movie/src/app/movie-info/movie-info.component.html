@@ -1,0 +1,52 @@
+<div id="bgimg" style="background-image: url(https://image.tmdb.org/t/p/w300/{{selectedMovieData.backdrop_path}});">
+    <div class="container" style="width: max-content;">
+        <div id="infoCard">
+            <div class="row" style="margin-top: 75px; margin-bottom: 75px;">
+                <div class="col">
+                    <mat-card class="example-card movie-img">
+                        <img mat-card-image src="https://image.tmdb.org/t/p/w300/{{selectedMovieData.poster_path }} ">
+                    </mat-card>
+                </div>
+                <div class="col content">
+                    <mat-card class="cardContent">
+                        <mat-card-title style="font-size: 30px;">
+                            {{selectedMovieData.original_title}}
+                        </mat-card-title><br>
+                        <mat-card-subtitle style="font-size: 20px;">Released:&nbsp;&nbsp;&nbsp; {{selectedMovieData.release_date}}
+                        </mat-card-subtitle>
+                        <mat-card-subtitle style="font-size: 15px;">Overview :&nbsp;&nbsp;&nbsp; {{selectedMovieData.overview}}
+                        </mat-card-subtitle>
+                        <mat-card-subtitle>vote_average : &nbsp;&nbsp;&nbsp; {{selectedMovieData.vote_average}}
+                        </mat-card-subtitle>
+                        <mat-card-subtitle>vote_count :&nbsp;&nbsp;&nbsp; {{selectedMovieData.vote_count}}
+                        </mat-card-subtitle>
+                        <div fxLayout="row wrap" fxLayoutGap="2px grid">
+                            <mat-card-subtitle> genre_ids :&nbsp;&nbsp;&nbsp;</mat-card-subtitle>
+                            <mat-card-subtitle *ngFor="let genre of particularMovieGenre">
+                                {{genre.name}}&nbsp;.&nbsp;
+                            </mat-card-subtitle>
+                        </div>
+                        <a mat-button matTooltip="Add to Favorite" (click)="addToFavourite(selectedMovieData)">
+                            <mat-icon>favorite</mat-icon>
+                        </a>
+                        <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert" style="font-size: 15px;">
+                            <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert" style="font-size: 15px;">
+                                <strong>SUCCESS !!!</strong>(added to favourite....)
+
+                                <button (click)="closeAlert()" type="button" class="close" data-dismis="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div *ngIf="warningAlert" class="alert alert-danger alert-dismissible fade show" role="alert" style="font-size: 15px;">
+                            <strong>WARNING !!!</strong>(already exist....)
+                            <button (click)="closeAlert()" type="button" class="close" data-dismis="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

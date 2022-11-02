@@ -1,0 +1,39 @@
+.sidenav-container {
+    height: 100%;
+}
+
+.sidenav {
+    width: 200px;
+    background-color: black;
+}
+
+.sidenav .mat-toolbar {
+    background: inherit;
+}
+
+.temp {
+    align-content: center;
+    align-items: center;
+}
+
+.mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.mat-toolbar.mat-primary {
+    background: #0363684a;
+    color: rgb(255, 255, 255);
+    height: 100%;
+}
+
+.onSelect:focus {
+    background-color: white;
+    color: dark;
+}
+
+.is-active {
+    background-color: white;
+    color: dark;
+}

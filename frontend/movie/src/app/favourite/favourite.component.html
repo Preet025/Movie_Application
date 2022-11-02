@@ -1,0 +1,17 @@
+<div class="content">
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+        <div fxFlex.xs="100%" fxFlex.sm="50%" fxFlex.md="33.33%" fxFlex.lg="25%" *ngFor="let data of favourites">
+            <mat-card class="mat-elevation-z4" style="width: 310px; height: 635px;">
+                <div (click)="movieDetails(data)">
+                    <img mat-card-image src="https://image.tmdb.org/t/p/w300/{{data.poster_path }}">
+                    <mat-card-content>
+                        <mat-card-title>{{data.original_title}}</mat-card-title>
+                        <mat-card-subtitle>vote: {{data.vote_average}} </mat-card-subtitle>
+                        <mat-card-subtitle>Release Date: {{data.release_date}} </mat-card-subtitle>
+                    </mat-card-content>
+                </div>
+                <button mat-button class="alert-danger" style="margin-left: 100px;" (click)="deleteMovie(data)">Remove</button>
+            </mat-card>
+        </div>
+    </div>
+</div>
